@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+
+.navbar-logo {
+    text-decoration: none; 
+    color: #000;
+}
+
+.navbar-new-game {
+    text-decoration: none;
+    color: #000;
+}
+
+.home-game-list-title {
+
+}
+
+.home-game-list-div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.new-game-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 16px;
+}
+
+.new-game-form-title {
+    margin-bottom: 20px;
+}
+
+.input-container {
+    margin-bottom: 10px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    padding: 10px; 
+    width: 100%; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+}
+
+.input-field textarea {
+    height: 100px;
+}
+
+.form-submit-button {
+    padding: 10px 20px; 
+    background-color: #007bff; 
+    color: white; border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+.auth-layout-header {
+    background-color: #007bff; 
+    color: white; 
+    padding: 16px; 
+    text-align: center;
+}
+
+.auth-layout-content-container {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.auth-layout-content {
+    display: flex;
+}
+
+.header-nav {
+    gap: 1em;
+}
+
+nav ul {
+    margin: 0px;
+    padding: 24px 0px 5px 30px;
+}
+
+nav li {
+    margin-right: 40px;
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+}
+
+nav li a {
+    text-decoration: none;
+}
