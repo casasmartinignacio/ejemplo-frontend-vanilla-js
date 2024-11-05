@@ -1199,6 +1199,261 @@ Consejo: Se debe mantener la clave secreta (secret) segura y no exponerla en el 
 ![diagrama de flujo](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*TNF50fkV0LDWtgZO8MsNOQ.jpeg)
 
 
+## Frontend en Node
+
+Programación frontend, también conocida como desarrollo del lado del cliente, implica crear la parte de un sitio web o aplicación con la que los usuarios interactúan directamente. Incluye desde el diseño y la disposición hasta elementos interactivos como botones, formularios y animaciones. El objetivo del desarrollo frontend es proporcionar una experiencia de usuario fluida y atractiva, asegurando que el diseño sea funcional y adaptable en diferentes dispositivos y navegadores.
+
+![Frontend dev con la espalda rotisima](https://miro.medium.com/v2/resize:fit:1260/format:webp/1*p1VgnZFwDQ0DNDcDkFQ1sA.png)
+
+Tecnologías clave en el desarrollo frontend
+**HTML (HyperText Markup Language):** HTML es la base de cualquier página web. Proporciona la estructura y el contenido de un sitio, definiendo elementos como encabezados, párrafos, imágenes, enlaces y más. Los elementos HTML se utilizan para marcar el documento de modo que los navegadores puedan interpretarlo y mostrar el contenido correctamente.
+
+**CSS (Cascading Style Sheets):** CSS es responsable del estilo de una página web. Controla la apariencia de los elementos HTML, incluyendo la disposición, colores, fuentes y espaciado. CSS permite a los desarrolladores frontend crear diseños visualmente atractivos y asegura que el sitio se vea bien en diferentes tamaños de pantalla mediante técnicas como diseño responsivo y media queries.
+
+**JavaScript:** añade interactividad y comportamiento dinámico a los sitios web. Con JavaScript, los desarrolladores pueden crear funciones como deslizadores de imágenes, validación de formularios, menús desplegables y actualizaciones en tiempo real sin recargar la página. Juega un papel central en mejorar la experiencia del usuario al hacer que las páginas web sean más receptivas e interactivas.
+
+Para agilizar el desarrollo y mejorar la eficiencia, los desarrolladores frontend suelen utilizar frameworks y bibliotecas que proporcionan herramientas preconstruidas y componentes reutilizables. Algunas de las opciones más populares incluyen:
+
+**React:** Desarrollado por Facebook, React es una poderosa biblioteca de JavaScript para construir interfaces de usuario. Se basa en el concepto de componentes reutilizables, lo cual ayuda a los desarrolladores a construir interfaces complejas de manera más eficiente. El DOM virtual de React mejora el rendimiento actualizando solo las partes de la página que necesitan ser renderizadas nuevamente.
+
+**Vue.js:** Vue es un framework ligero y flexible de JavaScript conocido por su simplicidad y facilidad de integración. Al igual que React, está basado en componentes, lo que lo hace adecuado para crear aplicaciones web modernas y dinámicas.
+
+**Angular:** Angular, mantenido por Google, es un framework frontend integral que proporciona todo lo necesario para construir aplicaciones de gran escala y con muchas funcionalidades. Es popular en el desarrollo a nivel empresarial debido a sus herramientas robustas y soporte integrado para enrutamiento, gestión de estado y manejo de formularios.
+
+**SASS/SCSS:** SASS (Syntactically Awesome Stylesheets) es un lenguaje de preprocesador que extiende CSS añadiendo características como variables, reglas anidadas y mixins. SCSS es la sintaxis más reciente y totalmente compatible con CSS, lo que facilita a los desarrolladores escribir estilos más limpios y mantenibles.
+
+Responsabilidades clave de un desarrollador frontend
+Desarrollo de interfaz de usuario (UI): Los desarrolladores frontend traducen los mockups de diseño (generalmente creados por diseñadores de UI/UX) en código real usando HTML, CSS y JavaScript. Aseguran que el sitio se vea como se espera mientras mantienen su usabilidad.
+
+Compatibilidad entre navegadores: Los diferentes navegadores pueden interpretar HTML, CSS y JavaScript de forma distinta. Los desarrolladores frontend prueban y depuran su código para garantizar la consistencia en navegadores como Chrome, Firefox, Safari y Edge.
+
+Optimización de rendimiento: Un sitio web con buen rendimiento es crítico para la experiencia del usuario y para el SEO (optimización en motores de búsqueda). Los desarrolladores frontend optimizan su código para reducir los tiempos de carga de la página, gestionan los recursos de manera eficiente y minimizan el uso de scripts pesados.
+
+Accesibilidad: Asegurar que un sitio web sea accesible para todos los usuarios, incluidos aquellos con discapacidades, es una parte importante del desarrollo frontend. Esto implica implementar características como la navegación por teclado, compatibilidad con lectores de pantalla y asegurar el contraste adecuado en los colores de texto y fondo.
+
+
+
+Module Bundlers
+Las herramientas como React y Angular, permiten desarrollar codigo para el frontend basado en componentes. Ademas, se pueden utilizar distintas librerias que se importan en las paginas y/o componentes la aplicacion web desarrollada. Este codigo sin embargo, no tiene ningun tipo de utilidad si no se transpila a lenguaje Javascript tradicional. Para esto se utilizan los module bundlers, es decir, empaquetadores de codigo que permiten generar un unico archivo Javascript que luego puede ser interpretado efectivamente por el navegador. Este nuevo archivo cuenta con todos los modulos que necesita la aplicacion para funcionar. De la misma forma, estos bundlers suelen incluir "loaders" para realizar el mismo proceso pero con archivos CSS, TypeScript, etc. Ademas, se pueden incluir plugins para minificar el codigo o incluso ofuscarlo.
+
+
+**Aplicaciones SINGLE PAGE APPLICATION (SPA)**
+Las aplicaciones de una sola página, conocidas como SPA (por sus siglas en inglés, Single Page Applications), han ganado popularidad gracias a los primeros frameworks como Angular (de Google), Ember, Knockout, y Backbone. Estos frameworks facilitaron el desarrollo de aplicaciones web más avanzadas que superan el uso de JavaScript simple y jQuery. Otro ejemplo popular es React, una biblioteca utilizada ampliamente para construir SPAs completas en JavaScript.
+
+Una SPA es una aplicación web que carga una sola página HTML desde el servidor y actualiza su contenido dinámicamente a medida que el usuario interactúa con la aplicación. En lugar de cargar nuevas páginas HTML cada vez que el usuario navega, la SPA solo cambia las partes necesarias del contenido, proporcionando una experiencia de usuario más rápida y fluida.
+
+Antes de la llegada de los frameworks modernos de JavaScript, la mayoría de los sitios web se implementaban como aplicaciones multipágina, es decir, que cada acción del usuario implicaba una nueva solicitud al servidor para cargar una página completa. Esto hacía que las aplicaciones tradicionales fueran intensivas en recursos, ya que cada cambio de página requería descargar nuevamente el HTML y otros recursos desde el servidor, consumiendo así ancho de banda y tiempo de CPU.
+
+En una aplicación multipágina tradicional, cuando el usuario visita una URL, el navegador solicita un archivo HTML y sus archivos CSS y JavaScript asociados al servidor. Después de un breve retraso de red, el usuario ve la página renderizada en su navegador y puede interactuar con ella. Cada transición a otra página repite este proceso, haciendo que el servidor maneje la mayor parte del trabajo, mientras que el cliente solo se encarga de mostrar la página.
+
+Esto puede resultar en una experiencia de navegación lenta, especialmente en sitios complejos o cuando el usuario tiene una conexión a internet deficiente.
+
+Beneficios de las SPA
+Para resolver este problema, muchos desarrolladores optan por construir sus aplicaciones web como SPAs. Aunque se llama "de una sola página", esto no significa que la aplicación solo tenga un contenido limitado. Más bien, la SPA se compone de una única página HTML que se envía desde el servidor, mientras que el contenido se actualiza dinámicamente conforme el usuario interactúa con la aplicación.
+
+Una SPA permite que el usuario interactúe sin necesidad de descargar nuevas páginas web completas, ya que reescribe la página actual en función de las interacciones del usuario. Esto resulta en una experiencia de navegación que se siente más rápida y receptiva. Cuando el usuario abre la aplicación en su navegador, el servidor entrega los recursos necesarios para ejecutarla, y a partir de ahí, el cliente maneja las actualizaciones de la interfaz.
+
+Ejemplo de una SPA:
+
+Un usuario visita una URL y solicita un archivo HTML mínimo y un archivo JavaScript. Tras un breve retraso de red, el usuario ve el contenido renderizado por JavaScript en el navegador e interactúa con la página. Las transiciones de página posteriores no requieren nuevos archivos del servidor, sino que utilizan el JavaScript inicial para actualizar el contenido, lo que permite que el cliente maneje toda la interacción.
+
+Métodos para Servir Código y Recursos en una SPA
+
+Una SPA puede utilizar dos enfoques para entregar su código y recursos:
+- Bundling: en este caso, cuando el navegador solicita la aplicación, el servidor devuelve y carga todos los recursos necesarios (HTML, CSS y JavaScript) de una sola vez.
+- Carga Diferida o División de Código (Lazy Loading): aquí, el servidor solo devuelve el HTML, CSS y JavaScript mínimos necesarios para cargar la aplicación, descargando recursos adicionales según se necesiten.
+
+**Client Side Rendering (CSR) vs Server Side Rendering (SSR)**
+
+En el dinámico mundo del desarrollo web, elegir el método de renderizado adecuado es fundamental para ofrecer una experiencia de usuario fluida. El Renderizado del Lado del Cliente (CSR) y el Renderizado del Lado del Servidor (SSR) son dos enfoques populares que abordan diferentes aspectos de rendimiento e interactividad. A continuación, exploraremos las diferencias clave entre CSR y SSR, sus ventajas y desventajas, y cuándo es mejor utilizar cada método.
+
+**¿Qué es el Renderizado del Lado del Cliente (CSR)?**
+El Renderizado del Lado del Cliente (Client Side Rendering) es una técnica donde solo se envía el esqueleto HTML desde el servidor, y el renderizado completo de la página ocurre en el navegador mediante la descarga y ejecución de JavaScript necesario.
+
+![CSR](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*P2XJ4V46V18fM2Ym4Onkag.png)
+
+¿Cómo funciona?
+
+Primero, el cliente envía una solicitud al servidor, el cual responde con un HTML básico. Luego, el cliente descarga y procesa el paquete de JavaScript necesario para completar la aplicación, que, a su vez, obtiene los datos necesarios y renderiza finalmente la página completa.
+
+**Ventajas del Renderizado del Lado del Cliente:**
+- Experiencia de Usuario Mejorada: CSR ofrece una experiencia más fluida e interactiva, ya que las interacciones se manejan directamente en el navegador sin requerir solicitudes constantes al servidor.
+
+- Carga Reducida en el Servidor: El servidor solo necesita proporcionar los archivos HTML y JavaScript iniciales, lo que reduce el procesamiento de renderizado en el lado del servidor.
+
+- Lógica Simplificada en el Backend: Con CSR, el servidor actúa principalmente como una API de datos, lo que permite un backend más limpio y simplificado.
+
+**Limitaciones del Renderizado del Lado del Cliente:**
+- Carga Inicial Más Lenta: CSR puede provocar una carga inicial más lenta, ya que el navegador necesita descargar y ejecutar JavaScript antes de renderizar la página.
+
+- Desafíos de SEO: Los motores de búsqueda pueden tener dificultades para rastrear o indexar contenido generado dinámicamente a través de JavaScript, lo que podría afectar el SEO y la visibilidad del sitio.
+
+**¿Cuándo usar el Renderizado del Lado del Cliente?**
+- Cuando el tiempo de carga inicial lento no es un problema.
+- Cuando necesitas una aplicación compleja con mucha interactividad.
+- Cuando requieres navegación sin recarga completa de la página.
+- Ideal para aplicaciones como juegos, editores y otros software complejos.
+
+**¿Qué es el Renderizado del Lado del Servidor (SSR)?**
+El Renderizado del Lado del Servidor, también conocido como SSR, es el proceso de renderizar la página HTML completa en el servidor en respuesta a una solicitud y devolverla al cliente.
+
+![SSR](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KD35FjCbigVEdMxDUyYStQ.png)
+
+**¿Cómo funciona el Renderizado del Lado del Servidor?**
+
+Primero, el cliente envía una solicitud al servidor, que obtiene cualquier dato necesario de la base de datos o la nube, combina la plantilla HTML y los datos para renderizar una página HTML completa, y la envía de regreso al cliente. Finalmente, el cliente sigue el camino de renderizado del cliente para mostrar la página.
+
+**Ventajas del Renderizado del Lado del Servidor:**
+- Tiempo de Carga Inicial Rápido: SSR reduce significativamente el tiempo de carga inicial, ya que el cliente recibe contenido pre-renderizado desde el servidor, resultando en un tiempo de carga percibido más rápido.
+
+- Beneficios de SEO: Los motores de búsqueda pueden rastrear e indexar fácilmente el contenido, ya que el HTML completo está disponible en la respuesta inicial. Esto mejora la visibilidad y clasificación de las páginas web.
+
+- Mejor Rendimiento en Dispositivos de Gama Baja: SSR es beneficioso para usuarios con dispositivos de gama baja o conexiones lentas, ya que el servidor maneja la mayor parte del proceso de renderizado.
+
+**Limitaciones del Renderizado del Lado del Servidor:**
+- Carga Aumentada en el Servidor: SSR puede generar una carga considerable en el servidor, especialmente cuando hay muchas solicitudes simultáneas, lo que puede afectar los tiempos de respuesta del servidor.
+
+- Interactividad Reducida: Como la mayor parte del renderizado ocurre en el servidor, las interacciones dentro de la aplicación pueden ser más lentas en comparación con CSR, ya que puede requerirse realizar solicitudes adicionales para actualizar el contenido de la página.
+
+**¿Cuándo usar el Renderizado del Lado del Servidor?**
+- Cuando los tiempos de carga inicial son más importantes que los tiempos de carga subsiguientes (por ejemplo, en tiendas en línea).
+- Cuando no se requiere interactividad avanzada o JavaScript pesado en el cliente (ideal para sitios de contenido).
+- Cuando no se necesita enrutamiento del lado del cliente.
+- Cuando deseas reducir la carga de cómputo y ancho de banda en el cliente.
+SSR es ideal para tiendas en línea y sitios web de contenido, donde la carga inicial rápida y el SEO son fundamentales.
+
+**Algunas arquitecturas de Front-end**
+En el mundo en constante cambio del desarrollo web, crear arquitecturas frontend escalables, mantenibles y eficientes es esencial para ofrecer experiencias de usuario excepcionales. Los patrones de arquitectura moderna para el frontend brindan a los desarrolladores estrategias sólidas para estructurar su código, manejar la complejidad y asegurar la longevidad de la base de código. En este artículo, exploraremos varios patrones contemporáneos de arquitectura frontend, destacando sus características clave, beneficios y cuándo utilizarlos.
+
+**Arquitectura Monolítica**
+La arquitectura monolítica es un enfoque tradicional en el que todos los componentes frontend, estilos y scripts están estrechamente integrados en una única aplicación. Si bien es simple y directo, este tipo de arquitectura puede volverse difícil de manejar a medida que los proyectos crecen en complejidad. Las arquitecturas monolíticas son adecuadas para aplicaciones más pequeñas o equipos con recursos limitados.
+
+![frontend monolitico](https://elitex.systems/blog/wp-content/uploads/2024/04/Front-end-architecture-4.png)
+
+
+**Puntos Clave:**
+- Base de código única para todos los componentes frontend.
+- Rápida de desarrollar y desplegar.
+- Limitada en escalabilidad y puede presentar desafíos de mantenimiento a medida que la base de código crece.
+
+**Arquitectura Modular**
+La arquitectura modular promueve la división del código frontend en módulos pequeños y reutilizables. Cada módulo encapsula una funcionalidad específica, lo que facilita su gestión, prueba y mantenimiento. Este enfoque fomenta la colaboración y permite la escalabilidad de la base de código.
+
+**Puntos Clave:**
+- Base de código dividida en módulos independientes.
+- Mejora la reutilización y el mantenimiento del código.
+- Permite el desarrollo paralelo y facilita la depuración.
+
+**Arquitectura Basada en Componentes**
+La arquitectura basada en componentes se centra en crear componentes de UI autónomos y reutilizables. Estos componentes pueden combinarse para construir interfaces de usuario complejas. Este patrón es la base de los frameworks modernos como React y Vue.js.
+
+**Puntos Clave:**
+- La UI se divide en componentes reutilizables.
+- Promueve un enfoque de desarrollo declarativo y modular.
+- Mejora la consistencia y el mantenimiento de la UI.
+
+**Micro Frontends**
+Inspirada en los microservicios, la arquitectura de micro frontends trata el desarrollo frontend como una colección de aplicaciones desacopladas y desplegables de manera independiente. Cada micro frontend es responsable de una funcionalidad o sección específica de la aplicación.
+
+![Micro frontends](https://elitex.systems/blog/wp-content/uploads/2024/04/Front-end-architecture-2.png)
+
+**Puntos Clave:**
+- Desarrollo y despliegue independiente de módulos frontend.
+- Equipos pueden trabajar en diferentes partes de la aplicación de forma concurrente.
+- Flexibilidad para elegir tecnologías diferentes para distintas partes de la UI.
+
+**JavaScript DOM (Document Object Model)**
+
+El DOM (Modelo de Objeto de Documento) es una interfaz de programación que los navegadores web utilizan para representar documentos HTML o XML. Mediante el uso del DOM junto con JavaScript, es posible modificar el contenido de una página, agregar o eliminar elementos, y realizar múltiples operaciones adicionales.
+
+![DOM](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Mb1Wxstw3ALBbGqNdJjWPg.jpeg)
+
+**¿Qué es el DOM?**
+El DOM es una interfaz que transforma una página web en un modelo de objetos comprensible por el navegador. Cuando un navegador carga una página web, analiza el contenido y crea una estructura en memoria, conocida como árbol DOM. Este árbol incluye todos los elementos de la página (por ejemplo, títulos, párrafos, imágenes, enlaces), los cuales están relacionados entre sí.
+
+**Importancia:**
+El DOM permite a los desarrolladores crear contenido dinámico e interactivo que responde a las interacciones del usuario. Gracias al DOM y a JavaScript, es posible actualizar el contenido de la página en respuesta a acciones del usuario, como hacer clic en un botón o enviar un formulario, lo que constituye la base de los sitios y aplicaciones web modernas.
+
+**Elementos del DOM**
+El DOM permite el acceso y manipulación de elementos HTML en las páginas web mediante métodos JavaScript, que se utilizan para seleccionar y modificar elementos específicos.
+
+**getElementById():** Selecciona un elemento según su atributo id.
+```javascript
+const element = document.getElementById("miElementoId");
+```
+
+**getElementsByClassName():** Selecciona todos los elementos que pertenecen a una clase específica.
+```javascript
+const elements = document.getElementsByClassName("miClase");
+```
+
+**getElementsByTagName():** Selecciona todos los elementos de un tipo específico.
+```javascript
+const elements = document.getElementsByTagName("div");
+```
+
+**querySelector() y querySelectorAll():** querySelector() selecciona el primer elemento que coincide con un selector CSS dado, mientras que querySelectorAll() selecciona todos los elementos que coinciden.
+```javascript
+const element = document.querySelector("#miElementoId");
+const elements = document.querySelectorAll(".miClase");
+```
+
+**Manipulación del DOM**
+El DOM permite realizar modificaciones dinámicas en la estructura de una página web mediante JavaScript. Entre estas modificaciones se incluyen cambiar contenido, agregar o eliminar elementos, y actualizar estilos.
+
+**Cambio de contenido:** Se puede modificar el contenido de texto de un elemento mediante las propiedades innerHTML o textContent.
+```javascript
+const element = document.getElementById("miElementoId");
+element.innerHTML = "Nuevo contenido"; // o element.textContent = "Nuevo contenido";
+```
+
+**Creación de un nuevo elemento:** Es posible agregar un nuevo elemento HTML a la página.
+```javascript
+const nuevoElemento = document.createElement("div");
+nuevoElemento.innerHTML = "Nuevo elemento";
+document.body.appendChild(nuevoElemento);
+```
+
+**  Eliminación de elementos:** Para eliminar un elemento, se localiza su elemento padre y se utiliza el método removeChild().
+```javascript
+const elementoAEliminar = document.getElementById("miElementoId");
+elementoAEliminar.parentNode.removeChild(elementoAEliminar);
+```
+
+**Cambio de estilos y propiedades:** Es posible modificar las propiedades de estilo CSS y otras propiedades de los elementos.
+```javascript
+const element = document.getElementById("miElementoId");
+element.style.color = "red";
+```
+
+**Eventos en el DOM**
+Los eventos permiten que los usuarios interactúen con la página. Representan acciones como hacer clic en un elemento, presionar una tecla, o enviar un formulario. Con JavaScript, se puede "escuchar" estos eventos y responder a las interacciones de los usuarios.
+
+**1. Listeners de eventos:** Para escuchar un evento específico, se usa addEventListener().
+```javascript
+const boton = document.getElementById("miBoton");
+boton.addEventListener("click", function() {
+    // Acciones al ocurrir el evento de clic
+});
+```
+
+**2. Eventos comunes:**
+- click: cuando se hace clic en un elemento.
+- mouseover y mouseout: al pasar el cursor sobre un elemento y al retirarlo.
+- keydown y keyup: al presionar y soltar una tecla.
+- submit: al enviar un formulario.
+
+**Objeto de Evento:**
+Los listeners de eventos reciben un objeto de evento que contiene información sobre el evento, como el tipo, el objetivo (target), y detalles específicos de la acción.
+
+**Seguridad en el DOM**
+La seguridad es un aspecto crucial en la manipulación del DOM, ya que usuarios malintencionados pueden intentar manipular páginas con fines maliciosos. Algunas medidas de seguridad ayudan a evitar ataques como el XSS (Cross-Site Scripting).
+
+- Ataques XSS: Los ataques XSS ocurren cuando usuarios maliciosos inyectan código JavaScript en la página. Para evitarlo, se debe manejar y mostrar datos externos de forma segura.
+- Métodos seguros para agregar datos: Se recomienda utilizar métodos como textContent o createElement al insertar datos en el DOM, y evitar el uso de innerHTML con datos del usuario.
+- CSP (Política de Seguridad de Contenido): El CSP ayuda a controlar desde dónde se pueden cargar los recursos de la página, protegiéndola contra ataques XSS y posibles fugas de datos.
+
+
 ## Anexo 1: Git y GitHub
 
 **¿Qué es un sistema de control de versiones?**
@@ -1353,4 +1608,7 @@ Referencias:
 [What is an API Gateway](https://medium.com/@learnwithwhiteboard_digest/understanding-what-is-api-gateway-and-how-it-works-with-examples-4762c26faca3)
 [Git](https://medium.com/swlh/an-introduction-to-git-and-github-22ecb4cb1256)
 [JWT](https://medium.com/@extio/understanding-json-web-tokens-jwt-a-secure-approach-to-web-authentication-f551e8d66deb)
-
+[Frontend introduction](https://medium.com/@bajagamers9/introduction-to-frontend-programming-18a2ceb63bbb)
+[SSR vs CSR](https://medium.com/@olayidecodes/client-side-rendering-vs-server-side-rendering-3c41f03c700d)
+[Frontend architectures](https://medium.com/@johnadjanohoun/a-comprehensive-guide-to-modern-frontend-architecture-patterns-eb39debbd503)
+[DOM](https://medium.com/@dilarauluturhan/javascript-dom-document-object-model-85a2bc72769c)
